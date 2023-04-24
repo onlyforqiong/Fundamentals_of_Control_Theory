@@ -1,0 +1,7 @@
+G1 = tf([2],[1,1,0])
+H1 = zpk([-3],[-2],1)
+sys1 = feedback(G1, H1,1)
+G2 = tf([10],[1,1])
+G = series(G2,sys1)
+H = tf([5,0],[1,6,8])
+sys = feedback(G,H)
